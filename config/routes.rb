@@ -1,9 +1,9 @@
 TryboshWeb::Application.routes.draw do
-  require "sidekiq/web"
-  mount Sidekiq::Web, at: "/sidekiq/"
-  require "sidekiq/api"
-  match "queue-status" => proc { [200, {"Content-Type" => "text/plain"}, [Sidekiq::Queue.new.size < 100 ? "OK" : "UHOH" ]] }
-
+  # TODO sidekiq not required at the moment
+  # require "sidekiq/web"
+  # mount Sidekiq::Web, at: "/sidekiq/"
+  # require "sidekiq/api"
+  # match "queue-status" => proc { [200, {"Content-Type" => "text/plain"}, [Sidekiq::Queue.new.size < 100 ? "OK" : "UHOH" ]] }
 
   root :to => 'home#index'
 

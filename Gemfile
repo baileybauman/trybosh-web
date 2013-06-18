@@ -7,8 +7,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -46,8 +44,14 @@ group :test do
 end
 
 gem "puma"
-gem "redis"
-gem "sidekiq"
+
+# Not using database at the moment
+# gem "pg"
+
+# Not using sidekiq/redis at the moment
+# gem "redis"
+# gem "sidekiq"
+
 gem "slim"
 gem "sinatra", ">= 1.3.0", :require => false
 group :assets do
